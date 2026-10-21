@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurpreet Singh | Data Analyst & BI Specialist Portfolio</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --heading: #1e293b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+        header {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #f8fafc; }
+        header p { font-size: 1.2rem; color: #94a3b8; max-width: 700px; margin: 0 auto 1.5rem auto; }
+
+        .badges { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
+        .badge { background-color: #1e293b; color: #38bdf8; padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem; border: 1px solid #334155; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
+        .section-title { font-size: 1.8rem; color: var(--heading); margin-bottom: 2rem; border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: 0.3rem; }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .project-card h3 { font-size: 1.5rem; color: var(--heading); margin-bottom: 0.5rem; }
+        .project-meta { font-size: 0.9rem; color: #64748b; margin-bottom: 1rem; }
+        .project-desc { margin-bottom: 1.5rem; }
+
+        .media-container {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f1f5f9;
+            margin-bottom: 1.5rem;
+            border: 1px solid #cbd5e1;
+        }
+
+        .media-container img { width: 100%; height: auto; display: block; }
+        .iframe-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; }
+        .iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn:hover { background-color: #1d4ed8; }
+        .btn-secondary { background-color: #475569; margin-left: 0.5rem; }
+        .btn-secondary:hover { background-color: #334155; }
+
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        footer a { color: #38bdf8; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header>
+        <h1>Gurpreet Singh</h1>
+        <p>Data Analyst & Business Intelligence Specialist specializing in Power BI, DAX Modeling, SQL, and Data Storytelling.</p>
+        <div class="badges">
+            <span class="badge">Power BI</span>
+            <span class="badge">DAX</span>
+            <span class="badge">Tableau</span>
+            <span class="badge">SQL</span>
+            <span class="badge">Data Modeling</span>
+            <span class="badge">ETL</span>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- FEATURED PROJECTS -->
+        <h2 class="section-title">Featured Interactive Dashboards</h2>
+
+        <!-- PROJECT 1: POWER BI -->
+        <div class="project-card">
+            <h3>1. Omnichannel Retail & Margin Bleed Dashboard (Power BI)</h3>
+            <p class="project-meta"><strong>Tools:</strong> Power BI Desktop | Advanced DAX | Star-Schema Data Modeling</p>
+            <p class="project-desc">
+                An executive-level dashboard analyzing 10,000+ retail transactions to track revenue growth against prior-year benchmarks, evaluate promotional discount bleed, and uncover margin compression across key product categories.
+            </p>
+            
+            <div class="media-container">
+                <!-- Replace 'powerbi-demo.gif' with your GIF filename uploaded to your GitHub repo -->
+                <img src="powerbi-demo.gif" alt="Power BI Dashboard Interactive Preview">
+            </div>
+
+            <a href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_PBI_REPO" target="_blank" class="btn">View GitHub Repository (.PBIX)</a>
+        </div>
+
+        <!-- PROJECT 2: TABLEAU -->
+        <div class="project-card">
+            <h3>2. Global Supply Chain & Logistics Performance (Tableau)</h3>
+            <p class="project-meta"><strong>Tools:</strong> Tableau Public | Interactive Filtering | Operational KPI Analytics</p>
+            <p class="project-desc">
+                An interactive operations dashboard tracking international shipping efficiency, lead-time delays, and regional fulfillment costs to streamline global supply chain performance.
+            </p>
+            
+            <div class="media-container iframe-container">
+                <!-- PASTE YOUR TABLEAU PUBLIC IFRAME EMBED CODE BELOW -->
+                <iframe src="<div class='tableauPlaceholder' id='viz1792605827003' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;SupplyChainLogistics_17926004534670&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SupplyChainLogistics_17926004534670&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;SupplyChainLogistics_17926004534670&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1792605827003');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1366px';vizElement.style.height='795px';} else { vizElement.style.width='100%';vizElement.style.height='1027px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>"></iframe>
+            </div>
+
+            <a href="https://public.tableau.com" target="_blank" class="btn btn-secondary">Open in Tableau Public</a>
+        </div>
+
+        <!-- ABOUT & RESUME SECTION -->
+        <h2 class="section-title">About & Professional Experience</h2>
+        <div class="project-card">
+            <p class="project-desc">
+                Experienced Data Analyst with expertise in building end-to-end reporting solutions, architecting multi-fact star-schema data models, writing optimized DAX measures, and creating interactive visuals in both Power BI and Tableau.
+            </p>
+            <!-- Upload your Resume PDF to the repository and update this link -->
+            <a href="resume.pdf" target="_blank" class="btn">Download Professional Resume (PDF)</a>
+        </div>
+
+        <!-- CONTACT SECTION -->
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="project-card">
+            <p class="project-desc">Interested in collaborating or discussing analytics projects?</p>
+            <p><strong>Email:</strong> gurpreet.102@gmail.com</p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank">linkedin.com/in/yourprofile</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com" target="_blank">github.com/gurpreet102</a></p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Gurpreet Singh | Hosted for free via GitHub Pages</p>
+    </footer>
+
+</body>
+</html>
