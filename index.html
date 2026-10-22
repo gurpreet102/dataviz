@@ -3,201 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gurpreet Singh | Data Analyst & BI Specialist</title>
+    <title>Gurpreet Singh — Lead Business Intelligence Specialist</title>
     
-    <!-- FAVICON LINK -->
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- ICON LIBRARIES -->
+    <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #2563eb;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #334155;
-            --heading: #1e293b;
+            /* v4.0 Slate Precision Palette (Lighter, softer dark slate) */
+            --bg-body: #1a1b23;
+            --bg-elevated: #222430;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-tertiary: #94a3b8;
+            --accent-warm: #f59e0b;
+            --line-subtle: #2e3245;
+            --line-medium: #3b4058;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-body); color: var(--text-primary); line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
-        header {
-            background-color: var(--primary);
-            color: #fff;
-            padding: 4rem 2rem;
-            text-align: center;
+        .wrapper { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* NAVIGATION / TOP BRAND HEADER */
+        nav {
+            padding: 2.25rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--line-subtle);
         }
+        
+        /* BRAND NAME: High impact, prominent top branding */
+        .brand { 
+            font-size: 1.75rem; 
+            font-weight: 700; 
+            letter-spacing: -0.02em; 
+            color: #ffffff; 
+            text-transform: uppercase;
+        }
+        
+        .availability {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-family: 'Space Mono', monospace;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+        .pulse-dot { width: 6px; height: 6px; background-color: #34d399; border-radius: 50%; box-shadow: 0 0 8px #34d399; }
 
-        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #f8fafc; }
-        header p { font-size: 1.2rem; color: #94a3b8; max-width: 700px; margin: 0 auto 1.5rem auto; }
+        /* HERO SECTION */
+        .hero { padding: 4.5rem 0 3.5rem 0; border-bottom: 1px solid var(--line-subtle); }
+        .hero-label { font-family: 'Space Mono', monospace; font-size: 0.78rem; color: var(--accent-warm); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; }
+        
+        /* VALUE PROPOSITION HEADLINE (No duplicate name) */
+        .hero h1 { font-size: 2.75rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 1.25rem; color: #ffffff; }
+        
+        /* DESCRIPTION COPY */
+        .hero p { font-size: 1.05rem; color: var(--text-secondary); max-width: 720px; font-weight: 300; margin-bottom: 2.25rem; line-height: 1.75; }
 
-        /* SKILL BADGES WITH ICONS */
-        .badges { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem; }
-        .badge { 
-            background-color: #1e293b; 
-            color: #f8fafc; 
-            padding: 0.5rem 1rem; 
-            border-radius: 20px; 
-            font-weight: 600; 
-            font-size: 0.9rem; 
-            border: 1px solid #334155;
+        /* SKILL PILLS */
+        .skills-row { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: center; }
+        .skill-item {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-        }
-        .badge i { font-size: 1.1rem; }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
-        .section-title { font-size: 1.8rem; color: var(--heading); margin-bottom: 2rem; border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: 0.3rem; }
-
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            padding: 2rem;
-            margin-bottom: 3rem;
-            border: 1px solid #e2e8f0;
-        }
-
-        .project-card h3 { font-size: 1.5rem; color: var(--heading); margin-bottom: 0.5rem; }
-        .project-meta { font-size: 0.95rem; color: #64748b; margin-bottom: 1rem; }
-
-        /* SOCIAL CONNECT LINKS & BUTTONS */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: var(--accent);
-            color: #fff;
-            padding: 0.61rem 1.2rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-family: 'Space Mono', monospace;
+            background-color: var(--bg-elevated);
+            padding: 0.35rem 0.85rem;
             border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.2s;
+            border: 1px solid var(--line-subtle);
         }
-        .btn:hover { background-color: #1d4ed8; }
-        .btn-secondary { background-color: #475569; }
-        .btn-secondary:hover { background-color: #334155; }
+        .skill-item i { font-size: 0.95rem; }
 
-        .social-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
-        .contact-item { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.8rem; font-size: 1.05rem; }
-        .contact-item i { color: var(--accent); font-size: 1.2rem; width: 20px; }
+        /* SECTION LAYOUTS */
+        .section-padding { padding: 4rem 0; border-bottom: 1px solid var(--line-subtle); }
+        .section-header { margin-bottom: 2.75rem; }
+        .section-title { font-size: 1.4rem; font-weight: 600; letter-spacing: -0.02em; color: #ffffff; margin-bottom: 0.35rem; }
+        .section-subtitle { font-size: 0.82rem; color: var(--text-tertiary); font-family: 'Space Mono', monospace; }
+
+        /* PROJECTS */
+        .project-item { margin-bottom: 4.5rem; }
+        .project-item:last-child { margin-bottom: 0; }
+        
+        .project-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; }
+        .project-title { font-size: 1.35rem; font-weight: 600; color: #ffffff; letter-spacing: -0.02em; }
+        .project-tags { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        .project-desc { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; font-weight: 300; max-width: 820px; line-height: 1.7; }
+
+        .project-viewport {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+            border: 1px solid var(--line-medium);
+            margin-bottom: 1.5rem;
+            transition: border-color 0.3s ease;
+        }
+        .project-viewport:hover { border-color: #525875; }
+        .project-viewport img { width: 100%; display: block; }
+
+        /* LINKS */
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            border-bottom: 1px solid var(--text-tertiary);
+            padding-bottom: 0.2rem;
+            transition: all 0.2s ease;
+        }
+        .link-btn:hover { color: var(--accent-warm); border-color: var(--accent-warm); }
+
+        /* CONTACT LIST */
+        .contact-list { display: flex; flex-direction: column; gap: 1.25rem; }
+        .contact-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--line-subtle);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: padding-left 0.2s ease;
+        }
+        .contact-row:hover { padding-left: 0.5rem; }
+        .contact-row-left { display: flex; align-items: center; gap: 1rem; }
+        .contact-row-left i { color: var(--text-tertiary); font-size: 1.1rem; }
+        .contact-label { font-size: 0.92rem; font-weight: 500; }
+        .contact-val { font-family: 'Space Mono', monospace; font-size: 0.82rem; color: var(--text-secondary); }
 
         footer {
-            background: var(--primary);
-            color: #94a3b8;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 2.75rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
         }
-        footer a { color: #38bdf8; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .hero h1 { font-size: 2.1rem; }
+            .hero p { font-size: 0.98rem; }
+            .contact-row { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- HERO SECTION -->
-    <header>
-        <h1>Gurpreet Singh</h1>
-        <p>Data Analyst & Business Intelligence Specialist transforming enterprise data into actionable visual insights.</p>
-        
-        <!-- VISUAL SKILL BADGES -->
-        <div class="badges">
-            <span class="badge"><i class="fa-solid fa-chart-column" style="color: #f2c811;"></i> Power BI</span>
-            <span class="badge"><i class="fa-solid fa-calculator" style="color: #38bdf8;"></i> DAX Modeling</span>
-            <span class="badge"><i class="fa-solid fa-chart-pie" style="color: #e8762d;"></i> Tableau</span>
-            <span class="badge"><i class="devicon-azuresqldatabase-plain" style="color: #0078d4;"></i> SQL</span>
-            <span class="badge"><i class="fa-solid fa-diagram-project" style="color: #a855f7;"></i> Data Modeling</span>
-            <span class="badge"><i class="fa-solid fa-filter" style="color: #22c55e;"></i> ETL & Power Query</span>
-        </div>
-    </header>
+    <div class="wrapper">
+        <!-- TOP NAV: Prominent single brand header -->
+        <nav>
+            <div class="brand">Gurpreet Singh</div>
+            <div class="availability">
+                <span class="pulse-dot"></span> Open for Architecture & Analytics Roles
+            </div>
+        </nav>
 
-    <div class="container">
-
-        <!-- FEATURED PROJECTS SECTION -->
-        <h2 class="section-title">Featured Interactive Dashboards</h2>
-
-        <!-- PROJECT 1: POWER BI -->
-        <div class="project-card">
-            <h3><i class="fa-solid fa-chart-line" style="color: #f2c811;"></i> 1. Omnichannel Retail & Margin Bleed Dashboard (Power BI)</h3>
-            <p class="project-meta"><strong>Tools:</strong> Power BI Desktop | Advanced DAX | Star-Schema Data Modeling</p>
-            <p style="margin-bottom: 1.5rem;">
-                An executive-level dashboard analyzing 10,000+ retail transactions to track revenue growth against prior-year benchmarks, evaluate promotional discount bleed, and uncover margin compression.
-            </p>
+        <!-- HERO SECTION: Headline value proposition without name duplication -->
+        <section class="hero">
+            <div class="hero-label">Data Architecture & Business Intelligence</div>
+            <h1>Architecting enterprise data into decision-ready visual insights.</h1>
+            <p>Senior Data Analyst &amp; BI Specialist architecting high-performance enterprise reporting models, advanced DAX semantics, star-schema data structures, and interactive dashboards.</p>
             
-            <div style="width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid #cbd5e1;">
-                <img src="powerbi-demo.gif" alt="Power BI Dashboard Interactive Preview" style="width: 100%; display: block;">
+            <div class="skills-row">
+                <span class="skill-item"><i class="fa-solid fa-chart-column" style="color: #f59e0b;"></i> Power BI</span>
+                <span class="skill-item"><i class="fa-solid fa-calculator" style="color: #38bdf8;"></i> DAX Modeling</span>
+                <span class="skill-item"><i class="fa-solid fa-chart-pie" style="color: #fb923c;"></i> Tableau</span>
+                <span class="skill-item"><i class="devicon-azuresqldatabase-plain" style="color: #60a5fa;"></i> SQL</span>
+                <span class="skill-item"><i class="fa-solid fa-diagram-project" style="color: #c084fc;"></i> Star-Schema ETL</span>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS -->
+        <section class="section-padding">
+            <div class="section-header">
+                <div class="section-title">Featured Analytics Case Studies</div>
+                <div class="section-subtitle">Interactive dashboards &amp; enterprise semantic models</div>
             </div>
 
-            <a href="https://github.com/YOUR_USERNAME/YOUR_PBI_REPO" target="_blank" class="btn">
-                <i class="fa-brands fa-github"></i> View GitHub Repository (.PBIX)
-            </a>
-        </div>
-
-        <!-- PROJECT 2: TABLEAU -->
-        <div class="project-card">
-            <h3><i class="fa-solid fa-map-location-dot" style="color: #e8762d;"></i> 2. Global Supply Chain & Logistics Performance (Tableau)</h3>
-            <p class="project-meta"><strong>Tools:</strong> Tableau Public | Interactive Filtering | Operational KPI Analytics</p>
-            <p style="margin-bottom: 1.5rem;">
-                An interactive operations dashboard tracking international shipping efficiency, lead-time delays, and regional fulfillment costs to streamline global supply chain performance.
-            </p>
-            
-            <div style="width: 100%; height: 75vh; min-height: 500px; max-height: 800px; overflow: hidden; border-radius: 8px; border: 1px solid #cbd5e1; background: #ffffff;">
-                <iframe src="https://public.tableau.com/views/SupplyChainLogistics_17926004534670/Dashboard1?:embed=y&:showVizHome=no" 
-                        style="width: 100%; height: 100%; border: none;">
-                </iframe>
-            </div>
-
-            <a href="https://public.tableau.com/views/SupplyChainLogistics_17926004534670/Dashboard1" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem;">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Tableau Public
-            </a>
-        </div>
-
-        <!-- ABOUT & RESUME SECTION -->
-        <h2 class="section-title">About & Professional Background</h2>
-        <div class="project-card">
-            <p style="margin-bottom: 1.5rem;">
-                Experienced Data Analyst with expertise in building end-to-end reporting solutions, architecting multi-fact star-schema data models, writing optimized DAX measures, and creating interactive visuals in both Power BI and Tableau.
-            </p>
-            <a href="resume.pdf" target="_blank" class="btn">
-                <i class="fa-solid fa-file-pdf"></i> Download Professional Resume (PDF)
-            </a>
-        </div>
-
-        <!-- CONTACT SECTION WITH SOCIAL ICONS -->
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="project-card">
-            <div class="contact-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span><strong>Email:</strong> gurpreet.102@gmail.com</span>
-            </div>
-            <!-- <div class="contact-item">
-                <i class="fa-brands fa-linkedin"></i>
-                <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/gurpreets102" target="_blank">linkedin.com/in/gurpreets102</a></span>
-            </div>
-            <div class="contact-item">
-                <i class="fa-brands fa-github"></i>
-                <span><strong>GitHub:</strong> <a href="https://github.com/gurpreet102" target="_blank">github.com/gurpreet102</a></span>
-            </div> -->
-
-            <div class="social-links" style="margin-top: 1.5rem;">
-                <a href="https://linkedin.com/in/gurpreets102" target="_blank" class="btn">
-                    <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
-                </a>
-                <a href="https://github.com/gurpreet102" target="_blank" class="btn btn-secondary">
-                    <i class="fa-brands fa-github"></i> Follow on GitHub
+            <!-- PROJECT 1: POWER BI -->
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">1. Omnichannel Retail &amp; Margin Bleed Executive Model</div>
+                    <div class="project-tags">Power BI &bull; Advanced DAX &bull; Star-Schema</div>
+                </div>
+                <p class="project-desc">
+                    An enterprise analytical model tracking 10,000+ retail transactions across global channels. Implements year-over-year time intelligence measures, discount impact bleed analysis, and dynamic profit margin evaluations.
+                </p>
+                <div class="project-viewport">
+                    <img src="powerbi-demo.gif" alt="Power BI Executive Dashboard Preview">
+                </div>
+                <a href="https://github.com/YOUR_USERNAME/YOUR_PBI_REPO" target="_blank" class="link-btn">
+                    <i class="fa-brands fa-github"></i> Inspect Repository &amp; PBIX Data Model
                 </a>
             </div>
-        </div>
 
+            <!-- PROJECT 2: TABLEAU -->
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="project-title">2. Global Supply Chain &amp; Logistics Operations</div>
+                    <div class="project-tags">Tableau Public &bull; Operational Analytics</div>
+                </div>
+                <p class="project-desc">
+                    A real-time logistics command center visualizing international lead-time variance, shipping mode efficiency, and fulfillment delay risks with dynamic responsive layout scaling.
+                </p>
+                <div class="project-viewport" style="height: 70vh; min-height: 480px; background: #fff;">
+                    <iframe src="https://public.tableau.com/views/SupplyChainLogistics_17926004534670/Dashboard1?:embed=y&:showVizHome=no" 
+                            style="width: 100%; height: 100%; border: none;">
+                    </iframe>
+                </div>
+                <a href="https://public.tableau.com/views/SupplyChainLogistics_17926004534670/Dashboard1" target="_blank" class="link-btn">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open View on Tableau Public
+                </a>
+            </div>
+        </section>
+
+        <!-- ABOUT & RESUME -->
+        <section class="section-padding">
+            <div class="section-header">
+                <div class="section-title">Background &amp; Capability</div>
+                <div class="section-subtitle">Engineering data into scalable business intelligence</div>
+            </div>
+            <p class="project-desc" style="margin-bottom: 2rem;">
+                With deep expertise in Power BI architecture and data analysis, I specialize in transforming messy enterprise records into fast, structured semantic layers. Fluent in DAX optimization, star-schema data warehousing, and executive storytelling in both Power BI and Tableau.
+            </p>
+            <a href="resume.pdf" target="_blank" class="link-btn">
+                <i class="fa-solid fa-file-pdf"></i> Download Complete Resume (PDF)
+            </a>
+        </section>
+
+        <!-- CONTACT LINKS -->
+        <section class="section-padding">
+            <div class="section-header">
+                <div class="section-title">Direct Connect</div>
+                <div class="section-subtitle">Professional channels</div>
+            </div>
+
+            <div class="contact-list">
+                <a href="mailto:gurpreet.102@gmail.com" class="contact-row">
+                    <div class="contact-row-left">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="contact-label">Email Inquiry</span>
+                    </div>
+                    <span class="contact-val">gurpreet.102@gmail.com</span>
+                </a>
+                <a href="https://linkedin.com/in/gurpreets102" target="_blank" class="contact-row">
+                    <div class="contact-row-left">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span class="contact-label">LinkedIn</span>
+                    </div>
+                    <span class="contact-val">linkedin.com/in/gurpreets102</span>
+                </a>
+                <a href="https://github.com/gurpreet102" target="_blank" class="contact-row">
+                    <div class="contact-row-left">
+                        <i class="fa-brands fa-github"></i>
+                        <span class="contact-label">GitHub</span>
+                    </div>
+                    <span class="contact-val">github.com/gurpreet102</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <span>&copy; 2026 Gurpreet Singh &bull; </span>
+            <span>Crafted with precision &amp; modern web standards</span>
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Gurpreet Singh | Hosted for free via GitHub Pages</p>
-    </footer>
 
 </body>
 </html>
