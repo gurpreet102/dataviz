@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gurpreet Singh | Data Analyst & BI Specialist Portfolio</title>
+    <title>Gurpreet Singh | Data Analyst & BI Specialist</title>
+    
+    <!-- FAVICON LINK -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- ICON LIBRARIES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
     <style>
         :root {
             --primary: #0f172a;
@@ -27,8 +35,21 @@
         header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #f8fafc; }
         header p { font-size: 1.2rem; color: #94a3b8; max-width: 700px; margin: 0 auto 1.5rem auto; }
 
-        .badges { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
-        .badge { background-color: #1e293b; color: #38bdf8; padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem; border: 1px solid #334155; }
+        /* SKILL BADGES WITH ICONS */
+        .badges { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .badge { 
+            background-color: #1e293b; 
+            color: #f8fafc; 
+            padding: 0.5rem 1rem; 
+            border-radius: 20px; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            border: 1px solid #334155;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge i { font-size: 1.1rem; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
         .section-title { font-size: 1.8rem; color: var(--heading); margin-bottom: 2rem; border-bottom: 3px solid var(--accent); display: inline-block; padding-bottom: 0.3rem; }
@@ -43,35 +64,28 @@
         }
 
         .project-card h3 { font-size: 1.5rem; color: var(--heading); margin-bottom: 0.5rem; }
-        .project-meta { font-size: 0.9rem; color: #64748b; margin-bottom: 1rem; }
-        .project-desc { margin-bottom: 1.5rem; }
+        .project-meta { font-size: 0.95rem; color: #64748b; margin-bottom: 1rem; }
 
-        .media-container {
-            width: 100%;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #f1f5f9;
-            margin-bottom: 1.5rem;
-            border: 1px solid #cbd5e1;
-        }
-
-        .media-container img { width: 100%; height: auto; display: block; }
-        .iframe-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; }
-        .iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-
+        /* SOCIAL CONNECT LINKS & BUTTONS */
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             background-color: var(--accent);
             color: #fff;
-            padding: 0.6rem 1.2rem;
+            padding: 0.61rem 1.2rem;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
             transition: background 0.2s;
         }
         .btn:hover { background-color: #1d4ed8; }
-        .btn-secondary { background-color: #475569; margin-left: 0.5rem; }
+        .btn-secondary { background-color: #475569; }
         .btn-secondary:hover { background-color: #334155; }
+
+        .social-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+        .contact-item { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.8rem; font-size: 1.05rem; }
+        .contact-item i { color: var(--accent); font-size: 1.2rem; width: 20px; }
 
         footer {
             background: var(--primary);
@@ -88,73 +102,95 @@
     <!-- HERO SECTION -->
     <header>
         <h1>Gurpreet Singh</h1>
-        <p>Data Analyst & Business Intelligence Specialist specializing in Power BI, DAX Modeling, SQL, and Data Storytelling.</p>
+        <p>Data Analyst & Business Intelligence Specialist transforming enterprise data into actionable visual insights.</p>
+        
+        <!-- VISUAL SKILL BADGES -->
         <div class="badges">
-            <span class="badge">Power BI</span>
-            <span class="badge">DAX</span>
-            <span class="badge">Tableau</span>
-            <span class="badge">SQL</span>
-            <span class="badge">Data Modeling</span>
-            <span class="badge">ETL</span>
+            <span class="badge"><i class="fa-solid fa-chart-column" style="color: #f2c811;"></i> Power BI</span>
+            <span class="badge"><i class="fa-solid fa-calculator" style="color: #38bdf8;"></i> DAX Modeling</span>
+            <span class="badge"><i class="fa-solid fa-chart-pie" style="color: #e8762d;"></i> Tableau</span>
+            <span class="badge"><i class="devicon-azuresqldatabase-plain" style="color: #0078d4;"></i> SQL</span>
+            <span class="badge"><i class="fa-solid fa-diagram-project" style="color: #a855f7;"></i> Data Modeling</span>
+            <span class="badge"><i class="fa-solid fa-filter" style="color: #22c55e;"></i> ETL & Power Query</span>
         </div>
     </header>
 
     <div class="container">
 
-        <!-- FEATURED PROJECTS -->
+        <!-- FEATURED PROJECTS SECTION -->
         <h2 class="section-title">Featured Interactive Dashboards</h2>
 
         <!-- PROJECT 1: POWER BI -->
         <div class="project-card">
-            <h3>1. Omnichannel Retail & Margin Bleed Dashboard (Power BI)</h3>
+            <h3><i class="fa-solid fa-chart-line" style="color: #f2c811;"></i> 1. Omnichannel Retail & Margin Bleed Dashboard (Power BI)</h3>
             <p class="project-meta"><strong>Tools:</strong> Power BI Desktop | Advanced DAX | Star-Schema Data Modeling</p>
-            <p class="project-desc">
-                An executive-level dashboard analyzing 10,000+ retail transactions to track revenue growth against prior-year benchmarks, evaluate promotional discount bleed, and uncover margin compression across key product categories.
+            <p style="margin-bottom: 1.5rem;">
+                An executive-level dashboard analyzing 10,000+ retail transactions to track revenue growth against prior-year benchmarks, evaluate promotional discount bleed, and uncover margin compression.
             </p>
             
-            <div class="media-container">
-                <!-- Replace 'powerbi-demo.gif' with your GIF filename uploaded to your GitHub repo -->
-                <img src="powerbi-demo.gif" alt="Power BI Dashboard Interactive Preview">
+            <div style="width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid #cbd5e1;">
+                <img src="powerbi-demo.gif" alt="Power BI Dashboard Interactive Preview" style="width: 100%; display: block;">
             </div>
 
-            <a href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_PBI_REPO" target="_blank" class="btn">View GitHub Repository (.PBIX)</a>
+            <a href="https://github.com/YOUR_USERNAME/YOUR_PBI_REPO" target="_blank" class="btn">
+                <i class="fa-brands fa-github"></i> View GitHub Repository (.PBIX)
+            </a>
         </div>
 
-<!-- PROJECT 2: TABLEAU -->
+        <!-- PROJECT 2: TABLEAU -->
         <div class="project-card">
-            <h3>2. Global Supply Chain & Logistics Performance (Tableau)</h3>
+            <h3><i class="fa-solid fa-map-location-dot" style="color: #e8762d;"></i> 2. Global Supply Chain & Logistics Performance (Tableau)</h3>
             <p class="project-meta"><strong>Tools:</strong> Tableau Public | Interactive Filtering | Operational KPI Analytics</p>
-            <p class="project-desc">
+            <p style="margin-bottom: 1.5rem;">
                 An interactive operations dashboard tracking international shipping efficiency, lead-time delays, and regional fulfillment costs to streamline global supply chain performance.
             </p>
             
-            <!-- Clean Responsive Iframe Container -->
-            <div style="width: 100%; position: relative; padding-bottom: 60%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid #cbd5e1; background: #ffffff;">
+            <div style="width: 100%; height: 75vh; min-height: 500px; max-height: 800px; overflow: hidden; border-radius: 8px; border: 1px solid #cbd5e1; background: #ffffff;">
                 <iframe src="https://public.tableau.com/views/SupplyChainLogistics_17926004534670/Dashboard1?:embed=y&:showVizHome=no" 
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+                        style="width: 100%; height: 100%; border: none;">
                 </iframe>
             </div>
 
-            <a href="https://public.tableau.com/views/SupplyChainLogistics_17926004534670/Dashboard1" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem; display: inline-block;">Open in Tableau Public</a>
-        </div>
-        
-        <!-- ABOUT & RESUME SECTION -->
-        <h2 class="section-title">About & Professional Experience</h2>
-        <div class="project-card">
-            <p class="project-desc">
-                Experienced Data Analyst with expertise in building end-to-end reporting solutions, architecting multi-fact star-schema data models, writing optimized DAX measures, and creating interactive visuals in both Power BI and Tableau.
-            </p>
-            <!-- Upload your Resume PDF to the repository and update this link -->
-            <a href="resume.pdf" target="_blank" class="btn">Download Professional Resume (PDF)</a>
+            <a href="https://public.tableau.com/views/SupplyChainLogistics_17926004534670/Dashboard1" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem;">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Tableau Public
+            </a>
         </div>
 
-        <!-- CONTACT SECTION -->
+        <!-- ABOUT & RESUME SECTION -->
+        <h2 class="section-title">About & Professional Background</h2>
+        <div class="project-card">
+            <p style="margin-bottom: 1.5rem;">
+                Experienced Data Analyst with expertise in building end-to-end reporting solutions, architecting multi-fact star-schema data models, writing optimized DAX measures, and creating interactive visuals in both Power BI and Tableau.
+            </p>
+            <a href="resume.pdf" target="_blank" class="btn">
+                <i class="fa-solid fa-file-pdf"></i> Download Professional Resume (PDF)
+            </a>
+        </div>
+
+        <!-- CONTACT SECTION WITH SOCIAL ICONS -->
         <h2 class="section-title">Get In Touch</h2>
         <div class="project-card">
-            <p class="project-desc">Interested in collaborating or discussing analytics projects?</p>
-            <p><strong>Email:</strong> gurpreet.102@gmail.com</p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank">linkedin.com/in/gurpreets102</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com" target="_blank">github.com/gurpreet102</a></p>
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span><strong>Email:</strong> gurpreet.102@gmail.com</span>
+            </div>
+            <-- <div class="contact-item">
+                <i class="fa-brands fa-linkedin"></i>
+                <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/gurpreets102" target="_blank">linkedin.com/in/gurpreets102</a></span>
+            </div>
+            <div class="contact-item">
+                <i class="fa-brands fa-github"></i>
+                <span><strong>GitHub:</strong> <a href="https://github.com/gurpreet102" target="_blank">github.com/gurpreet102</a></span>
+            </div> -->
+
+            <div class="social-links" style="margin-top: 1.5rem;">
+                <a href="https://linkedin.com/in/gurpreets102" target="_blank" class="btn">
+                    <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+                </a>
+                <a href="https://github.com/gurpreet102" target="_blank" class="btn btn-secondary">
+                    <i class="fa-brands fa-github"></i> Follow on GitHub
+                </a>
+            </div>
         </div>
 
     </div>
