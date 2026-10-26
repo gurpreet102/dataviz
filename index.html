@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -72,7 +72,7 @@
         .hero { padding: 4.5rem 0 3.5rem 0; border-bottom: 1px solid var(--line-subtle); }
         .hero-label { font-family: 'Space Mono', monospace; font-size: 0.78rem; color: var(--accent-warm); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; }
         
-        /* VALUE PROPOSITION HEADLINE (No duplicate name) */
+        /* VALUE PROPOSITION HEADLINE */
         .hero h1 { font-size: 2.75rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 1.25rem; color: #ffffff; }
         
         /* DESCRIPTION COPY */
@@ -96,9 +96,40 @@
 
         /* SECTION LAYOUTS */
         .section-padding { padding: 4rem 0; border-bottom: 1px solid var(--line-subtle); }
-        .section-header { margin-bottom: 2.75rem; }
+        .section-header { margin-bottom: 2rem; }
         .section-title { font-size: 1.4rem; font-weight: 600; letter-spacing: -0.02em; color: #ffffff; margin-bottom: 0.35rem; }
         .section-subtitle { font-size: 0.82rem; color: var(--text-tertiary); font-family: 'Space Mono', monospace; }
+
+        /* FILTER MENU */
+        .filter-container {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .filter-tab {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.82rem;
+            color: var(--text-tertiary);
+            background-color: var(--bg-elevated);
+            border: 1px solid var(--line-subtle);
+            padding: 0.5rem 1.1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .filter-tab:hover {
+            color: var(--text-primary);
+            border-color: var(--line-medium);
+        }
+        .filter-tab.active-tab {
+            color: #ffffff;
+            background-color: #2a2d3d;
+            border-color: var(--accent-warm);
+        }
 
         /* PROJECTS */
         .project-item { margin-bottom: 4.5rem; }
@@ -171,12 +202,35 @@
             .hero p { font-size: 0.98rem; }
             .contact-row { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
         }
+/* HIGH-IMPACT SCROLL & FADE EFFECT */
+.project-item {
+    opacity: 0.15;
+    transform: scale(0.97) translateY(20px);
+    filter: blur(2px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+/* ACTIVE CENTER CARD FOCUS */
+.project-item.is-focused {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+}
+
+/* HERO DYNAMIC DISSOLVE */
+.hero {
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    will-change: opacity, transform;
+}
     </style>
 </head>
 <body>
 
     <div class="wrapper">
-        <!-- TOP NAV: Prominent single brand header -->
+        <!-- TOP NAV -->
         <nav>
             <div class="brand">Gurpreet Singh</div>
             <div class="availability">
@@ -184,7 +238,7 @@
             </div>
         </nav>
 
-        <!-- HERO SECTION: Headline value proposition without name duplication -->
+        <!-- HERO SECTION -->
         <section class="hero">
             <div class="hero-label">Data Architecture & Business Intelligence</div>
             <h1>Architecting enterprise data into decision-ready visual insights.</h1>
@@ -199,15 +253,28 @@
             </div>
         </section>
 
-        <!-- FEATURED PROJECTS -->
+        <!-- FEATURED PROJECTS WITH SOFTWARE FILTER MENU -->
         <section class="section-padding">
             <div class="section-header">
                 <div class="section-title">Featured Analytics Case Studies</div>
                 <div class="section-subtitle">Interactive dashboards &amp; enterprise semantic models</div>
             </div>
 
+            <!-- SOFTWARE FILTER TABS -->
+            <div class="filter-container">
+                <button class="filter-tab active-tab" onclick="filterProjects('all', this)">
+                    <i class="fa-solid fa-layer-group"></i> All Projects (3)
+                </button>
+                <button class="filter-tab" onclick="filterProjects('powerbi', this)">
+                    <i class="fa-solid fa-chart-column" style="color: #f59e0b;"></i> Power BI (2)
+                </button>
+                <button class="filter-tab" onclick="filterProjects('tableau', this)">
+                    <i class="fa-solid fa-chart-pie" style="color: #fb923c;"></i> Tableau (1)
+                </button>
+            </div>
+
             <!-- PROJECT 1: POWER BI -->
-            <div class="project-item">
+            <div class="project-item" data-category="powerbi">
                 <div class="project-header">
                     <div class="project-title">1. Omnichannel Retail &amp; Margin Bleed Executive Model</div>
                     <div class="project-tags">Power BI &bull; Advanced DAX &bull; Star-Schema</div>
@@ -224,7 +291,7 @@
             </div>
 
             <!-- PROJECT 2: POWER BI -->
-            <div class="project-item">
+            <div class="project-item" data-category="powerbi">
                 <div class="project-header">
                     <div class="project-title">2. Enterprise Financial Reconciliation</div>
                     <div class="project-tags">Power BI &bull; Calculation Groups &bull; Advanced DAX &bull; Star-Schema</div>
@@ -241,7 +308,7 @@
             </div>
             
             <!-- PROJECT 3: TABLEAU -->
-            <div class="project-item">
+            <div class="project-item" data-category="tableau">
                 <div class="project-header">
                     <div class="project-title">3. Superstore Sales Performance Analytics</div>
                     <div class="project-tags">Tableau Public &bull; Dynamic Parameters &bull; Regional Mapping</div>
@@ -274,7 +341,7 @@
             </a>
         </section>
 
-        <!-- CONTACT LINKS -->
+<!-- CONTACT LINKS -->
         <section class="section-padding">
             <div class="section-header">
                 <div class="section-title">Direct Connect</div>
@@ -313,5 +380,85 @@
         </footer>
     </div>
 
+    <!-- FILTER SCRIPT -->
+    <script>
+        function filterProjects(category, btnElement) {
+            // Remove active state from all buttons
+            const buttons = document.querySelectorAll('.filter-tab');
+            buttons.forEach(btn => btn.classList.remove('active-tab'));
+            
+            // Set clicked button to active
+            btnElement.classList.add('active-tab');
+
+            // Toggle visibility of project items
+            const projects = document.querySelectorAll('.project-item');
+            projects.forEach(project => {
+                if (category === 'all' || project.getAttribute('data-category') === category) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
+    </script>
+<script>
+    // FILTER FUNCTIONALITY
+    function filterProjects(category, btnElement) {
+        const buttons = document.querySelectorAll('.filter-tab');
+        buttons.forEach(btn => btn.classList.remove('active-tab'));
+        btnElement.classList.add('active-tab');
+
+        const projects = document.querySelectorAll('.project-item');
+        projects.forEach(project => {
+            if (category === 'all' || project.getAttribute('data-category') === category) {
+                project.style.display = 'block';
+            } else {
+                project.style.display = 'none';
+            }
+        });
+        
+        // Recalculate focus states after filtering
+        handleScrollFocus();
+    }
+
+    // HIGH-IMPACT VIEWPORT FOCUS & FADE ENGINE
+    function handleScrollFocus() {
+        const projects = document.querySelectorAll('.project-item');
+        const viewportHeight = window.innerHeight;
+        const centerPoint = viewportHeight / 2;
+
+        projects.forEach(project => {
+            if (project.style.display === 'none') return;
+
+            const rect = project.getBoundingClientRect();
+            const cardCenter = rect.top + (rect.height / 2);
+            
+            // Check if card is near center of viewport (within 40% band)
+            const distanceFromCenter = Math.abs(centerPoint - cardCenter);
+            const focusThreshold = viewportHeight * 0.45;
+
+            if (distanceFromCenter < focusThreshold && rect.top < viewportHeight && rect.bottom > 0) {
+                project.classList.add('is-focused');
+            } else {
+                project.classList.remove('is-focused');
+            }
+        });
+
+        // HERO GRADUAL DISSOLVE ON SCROLL
+        const hero = document.querySelector('.hero');
+        const scrollY = window.scrollY;
+        if (hero) {
+            if (scrollY < 500) {
+                hero.style.opacity = Math.max(0, 1 - (scrollY / 400));
+                hero.style.transform = `translateY(${scrollY * 0.15}px)`;
+            }
+        }
+    }
+
+    // Attach listeners
+    window.addEventListener('scroll', handleScrollFocus, { passive: true });
+    window.addEventListener('resize', handleScrollFocus, { passive: true });
+    document.addEventListener('DOMContentLoaded', handleScrollFocus);
+</script>
 </body>
 </html>
