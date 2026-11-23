@@ -75,24 +75,29 @@
 
         /* NAVIGATION / TOP BRAND HEADER */
         nav {
-            padding: 2.25rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1.15rem 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: var(--bg-body);
             border-bottom: 1px solid var(--line-subtle);
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.75rem;
+            backdrop-filter: blur(10px);
         }
         
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.85rem;
         }
 
         /* BRAND NAME: High impact, prominent top branding */
         .brand { 
-            font-size: 1.75rem; 
+            font-size: 1.5rem; 
             font-weight: 700; 
             letter-spacing: -0.02em; 
             color: var(--text-primary); 
@@ -103,29 +108,30 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-secondary);
             font-family: 'Space Mono', monospace;
             background: rgba(16, 185, 129, 0.1);
-            padding: 0.4rem 0.8rem;
+            padding: 0.35rem 0.75rem;
             border-radius: 20px;
             border: 1px solid rgba(16, 185, 129, 0.25);
         }
-        .pulse-dot { width: 6px; height: 6px; background-color: #34d399; border-radius: 50%; box-shadow: 0 0 8px #34d399; }
+        .pulse-dot { width: 6px; height: 6px; background-color: #34d399; border-radius: 50%; box-shadow: 0 0 8px #34d399; flex-shrink: 0; }
 
         /* THEME TOGGLE BUTTON */
         .theme-toggle {
             background-color: var(--bg-elevated);
             border: 1px solid var(--line-subtle);
             color: var(--text-secondary);
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+            flex-shrink: 0;
             transition: all 0.2s ease;
         }
         .theme-toggle:hover {
@@ -197,7 +203,7 @@
         }
 
         /* PROJECTS */
-        .project-item { margin-bottom: 4.5rem; }
+        .project-item { margin-bottom: 4.5rem; scroll-margin-top: 90px; }
         .project-item:last-child { margin-bottom: 0; }
         
         .project-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; }
@@ -264,8 +270,11 @@
         }
 
         @media (max-width: 768px) {
-            nav { flex-direction: column; align-items: flex-start; gap: 1rem; }
-            .nav-right { width: 100%; justify-content: space-between; }
+            nav { flex-direction: row; justify-content: space-between; align-items: center; padding: 0.85rem 0; gap: 0.5rem; }
+            .brand { font-size: 1.15rem; }
+            .nav-right { width: auto; justify-content: flex-end; gap: 0.5rem; }
+            .availability { font-size: 0.68rem; padding: 0.28rem 0.55rem; gap: 0.35rem; }
+            .theme-toggle { width: 32px; height: 32px; font-size: 0.82rem; }
             .hero h1 { font-size: 2.1rem; }
             .hero p { font-size: 0.98rem; }
             .contact-row { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
@@ -378,10 +387,10 @@
             <!-- SOFTWARE FILTER TABS -->
             <div class="filter-container">
                 <button class="filter-tab active-tab" onclick="filterProjects('all', this)">
-                    <i class="fa-solid fa-layer-group"></i> All Projects (4)
+                    <i class="fa-solid fa-layer-group"></i> All Projects (5)
                 </button>
                 <button class="filter-tab" onclick="filterProjects('powerbi', this)">
-                    <i class="fa-solid fa-chart-column" style="color: #f59e0b;"></i> Power BI (2)
+                    <i class="fa-solid fa-chart-column" style="color: #f59e0b;"></i> Power BI (3)
                 </button>
                 <button class="filter-tab" onclick="filterProjects('tableau', this)">
                     <i class="fa-solid fa-chart-pie" style="color: #fb923c;"></i> Tableau (2)
@@ -391,7 +400,28 @@
             <!-- PROJECT 1: POWER BI -->
             <div class="project-item" data-category="powerbi">
                 <div class="project-header">
-                    <div class="project-title">1. Omnichannel Retail &amp; Margin Bleed Executive Model</div>
+                    <div class="project-title">1. ActiveLife Retail Sales &amp; Profitability Model</div>
+                    <div class="project-tags">Power BI &bull; Advanced DAX &bull; Star-Schema</div>
+                </div>
+                <p class="project-desc">
+                    An executive retail analytical model tracking YTD sales, gross profit, gross margin, units sold, orders, and AOV against prior-year benchmarks. Implements YoY and PYTD time intelligence measures, sport and brand performance comparisons, regional revenue splits, and margin-vs-sales scatter evaluations with multi-dimension slicers.
+                </p>
+                <div class="project-viewport" style="height: 70vh; min-height: 480px; background: #fff;">
+                    <iframe title="ActiveLife Retail Performance" 
+                            src="https://app.powerbi.com/view?r=eyJrIjoiZDc1ODY3MDgtZGU5ZS00OGVmLWIwMzEtMjljOWE3OTdlYjgzIiwidCI6IjgzZGQ2NTQ4LTU0OTktNDcyMy05NzY0LTI4YjQzYTBkYThkMyJ9" 
+                            style="width: 100%; height: 100%; border: none;" 
+                            allowFullScreen="true">
+                    </iframe>
+                </div>
+                <a href="ActiveLife_Retail_Performance.pbix" target="_blank" class="link-btn">
+                    <i class="fa-brands fa-github"></i> Inspect Repository &amp; PBIX Data Model
+                </a>
+            </div>
+
+            <!-- PROJECT 2: POWER BI -->
+            <div class="project-item" data-category="powerbi">
+                <div class="project-header">
+                    <div class="project-title">2. Omnichannel Retail &amp; Margin Bleed Executive Model</div>
                     <div class="project-tags">Power BI &bull; Advanced DAX &bull; Star-Schema</div>
                 </div>
                 <p class="project-desc">
@@ -409,10 +439,10 @@
                 </a>
             </div>
 
-            <!-- PROJECT 2: POWER BI -->
+            <!-- PROJECT 3: POWER BI -->
             <div class="project-item" data-category="powerbi">
                 <div class="project-header">
-                    <div class="project-title">2. Enterprise Financial Reconciliation</div>
+                    <div class="project-title">3. Enterprise Financial Reconciliation</div>
                     <div class="project-tags">Power BI &bull; Calculation Groups &bull; Advanced DAX &bull; Star-Schema</div>
                 </div>
                 <p class="project-desc">
@@ -430,10 +460,10 @@
                 </a>
             </div>
             
-            <!-- PROJECT 3: TABLEAU -->
+            <!-- PROJECT 4: TABLEAU -->
             <div class="project-item" data-category="tableau">
                 <div class="project-header">
-                    <div class="project-title">3. HR Attrition &amp; Workforce Demographics Analytics</div>
+                    <div class="project-title">4. HR Attrition &amp; Workforce Demographics Analytics</div>
                     <div class="project-tags">Tableau Public &bull; HR Analytics &bull; Cohort Breakdown &bull; Matrix Evaluation</div>
                 </div>
                 <p class="project-desc">
@@ -449,10 +479,10 @@
                 </a>
             </div>
 
-            <!-- PROJECT 4: TABLEAU -->
+            <!-- PROJECT 5: TABLEAU -->
             <div class="project-item" data-category="tableau">
                 <div class="project-header">
-                    <div class="project-title">4. Superstore Sales Performance Analytics</div>
+                    <div class="project-title">5. Superstore Sales Performance Analytics</div>
                     <div class="project-tags">Tableau Public &bull; Dynamic Parameters &bull; Regional Mapping</div>
                 </div>
                 <p class="project-desc">
